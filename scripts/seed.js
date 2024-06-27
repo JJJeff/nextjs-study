@@ -1,3 +1,4 @@
+// todo 初始化vercel/postgres数据库脚本
 const { db } = require('@vercel/postgres');
 const {
   invoices,
@@ -5,7 +6,7 @@ const {
   revenue,
   users,
 } = require('../app/lib/placeholder-data.js');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt'); // 对存储的数据库中的密码字段进行加密
 
 async function seedUsers(client) {
   try {

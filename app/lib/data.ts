@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql } from '@vercel/postgres'; // sql函数可以用来查询数据库数据
 import {
   CustomerField,
   CustomersTableType,
@@ -33,6 +33,7 @@ export async function fetchRevenue() {
 }
 
 export async function fetchLatestInvoices() {
+  // todo 查询最近的5张发票
   try {
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
